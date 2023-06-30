@@ -20,6 +20,7 @@ if __name__ == "__main__":
 
     # input_list = os.listdir(args.input)
     input_list = glob(os.path.join(args.input, "*.mp3"))
+    # input_list = glob(os.path.join(args.input, "*.wav"))
     print(input_list)
     count = 0
 
@@ -32,6 +33,7 @@ if __name__ == "__main__":
 
         # pydub用にAudioSegmentオブジェクトに変換
         audio_segment = AudioSegment.from_mp3(input_path)
+        # audio_segment = AudioSegment.from_wav(input_path)
 
         # 音声ファイルを発話単位に分割
         chunks = split_on_silence(
